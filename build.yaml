@@ -10,5 +10,5 @@ labels:
   org.opencontainers.image.description: >-
     Read M-Bus sensors via USB serial adapter and publish to Home Assistant
     via MQTT auto-discovery.
-  org.opencontainers.image.source: "https://github.com/home-assistant/addons-example"
+  org.opencontainers.image.source: "https://github.com/NerdyProjects/ha-usb-mbus"
   org.opencontainers.image.licenses: "GPL-3.0"

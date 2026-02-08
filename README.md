@@ -30,14 +30,13 @@ or push it to a Git hosting service (GitHub, GitLab, …).
 
 1. Open Home Assistant → **Settings** → **Add-ons** → **Add-on Store**.
 2. Click the **⋮** menu (top-right) → **Repositories**.
-3. Enter the URL of **this** repository (the parent directory that contains
-   the `ha/` folder). For a local checkout the path looks like:
+3. Enter the URL of **this** repository. For a local checkout the path looks like:
    ```
-   /addons/ha-mbus
+   /addons/ha-usb-mbus
    ```
    For a remote Git repository:
    ```
-   https://github.com/<your-user>/ha-mbus
+   https://github.com/NerdyProjects/ha-usb-mbus
    ```
 4. Click **Add** → **Close**.
 
