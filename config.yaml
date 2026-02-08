@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: M-Bus Reader
-version: "0.1.0"
+version: "0.1.1"
 slug: mbus-reader
 description: >-
   Read M-Bus (Meter-Bus) sensors via a USB serial adapter and expose them
