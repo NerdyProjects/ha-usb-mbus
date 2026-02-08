@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: Home Assistant Addon for reading M-Bus sensors via USB serial adapter
+url: 'https://github.com/NerdyProjects/ha-usb-mbus'
+maintainer: Matthias Larisch <github@matthias-larisch.de>
