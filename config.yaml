@@ -12,7 +12,7 @@ arch:
   - armhf
   - armv7
   - i386
-init: true
+init: false
 uart: true
 services:
   - "mqtt:need"
