@@ -1,0 +1,29 @@
+#include <tunables/global>
+
+profile mbus-reader flags=(attach_disconnected,mediate_deleted) {
+  #include <abstractions/base>
+
+  # Receive signals from S6-Overlay
+  signal (receive) peer=*,
+
+  # Access to options.json and other Home Assistant files
+  /data/** rw,
+
+  # Access to mapped volumes
+  /share/** rw,
+
+  # Serial / USB device access for M-Bus adapter
+  /dev/tty* rw,
+  /dev/ttyUSB* rw,
+  /dev/ttyACM* rw,
+  /dev/serial/** rw,
+
+  # Python / application
+  /usr/bin/python3* ix,
+  /opt/mbus_reader/** r,
+
+  # System access
+  /proc/*/fd/ r,
+  /etc/resolv.conf r,
+  /run/** rw,
+}

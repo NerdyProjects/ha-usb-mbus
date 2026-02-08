@@ -1,0 +1,34 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: M-Bus Reader
+version: "0.1.0"
+slug: mbus-reader
+description: >-
+  Read M-Bus (Meter-Bus) sensors via a USB serial adapter and expose them
+  as Home Assistant sensors through MQTT auto-discovery.
+url: "https://github.com/home-assistant/addons-example/tree/main/mbus-reader"
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+init: false
+uart: true
+services:
+  - "mqtt:need"
+map:
+  - share:rw
+options:
+  serial_port: "/dev/ttyUSB0"
+  baud_rate: 2400
+  poll_interval: 120
+  devices:
+    - address: 0
+      name: "MBus Device"
+schema:
+  serial_port: str
+  baud_rate: "int(300,9600)"
+  poll_interval: "int(10,)"
+  devices:
+    - address: "int(0,250)"
+      name: str
