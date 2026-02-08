@@ -8,3 +8,6 @@ RUN pip3 install --no-cache-dir -r /tmp/requirements.txt && rm /tmp/requirements
 
 # Copy application code
 COPY rootfs /
+
+# Ensure s6 service scripts are executable
+RUN chmod +x /etc/services.d/mbus/run /etc/services.d/mbus/finish
