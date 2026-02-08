@@ -1,0 +1,8 @@
+# Compiled cross-validation binary
+tests/cross_validation/decode_telegram
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/

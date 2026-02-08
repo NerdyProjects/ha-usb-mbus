@@ -86,17 +86,17 @@ class TestDecodePayload(unittest.TestCase):
         self.records = decode(self.payload)
 
     def test_record_count(self) -> None:
-        """The Sensostar U telegram should yield 27 data records."""
-        self.assertEqual(len(self.records), 27)
+        """The Sensostar U telegram should yield 29 data records."""
+        self.assertEqual(len(self.records), 29)
 
     # -- individual records -------------------------------------------------
 
     def test_fab_number(self) -> None:
-        """Record 0: fabrication number = 73892673 (0x04656341)."""
+        """Record 0: fabrication number = 73753409 (0x04656341 LE)."""
         rec = self.records[0]
         self.assertEqual(rec.name, "fab_number")
-        # 0x04656341 little-endian
-        self.assertAlmostEqual(rec.value_scaled, 73892673.0, places=0)
+        # 0x41,0x63,0x65,0x04 little-endian → 0x04656341 = 73753409
+        self.assertAlmostEqual(rec.value_scaled, 73753409.0, places=0)
 
     def test_energy_wh(self) -> None:
         """Record 1: energy = 10666 * 10^3 = 10666000 Wh."""
@@ -182,11 +182,11 @@ class TestDecodePayload(unittest.TestCase):
         self.assertAlmostEqual(rec.value_scaled, 3218000.0, places=0)
 
     def test_volume_storage1(self) -> None:
-        """Record 13: volume (storage 1) ≈ 1875.757 m³."""
+        """Record 13: volume (storage 1) ≈ 1874.733 m³."""
         rec = self.records[13]
         self.assertEqual(rec.name, "volume")
         self.assertEqual(rec.storage, 1)
-        self.assertAlmostEqual(rec.value_scaled, 1875.757, places=2)
+        self.assertAlmostEqual(rec.value_scaled, 1874.733, places=2)
 
     def test_time_point_date_storage1(self) -> None:
         """Record 14: time_point date (storage 1) = 2022-12-31."""
